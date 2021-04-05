@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-console.log('This script populates some test books, authors, genres and bookinstances to your database. Specified database as argument - e.g.: populatedb mongodb+srv://mandril:mandril@cluster0.flfcz.mongodb.net/local_library?retryWrites=true');
+console.log('This script populates some test books, authors, genres and bookinstances to your database. Specified database as argument - e.g.: populatedb mongodb+srv://mandril:mandril@cluster0.flfcz.mongodb.net/local_library?retryWrites=true&w=majority');
 
 // Get arguments passed on command line
 var userArgs = process.argv.slice(2);
