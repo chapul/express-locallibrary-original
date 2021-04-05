@@ -18,7 +18,9 @@ var app = express();
 var mongoose = require('mongoose');
 var dev_db_url = 'mongodb+srv://mandril:mandril@cluster0.flfcz.mongodb.net/local_library?retryWrites=true&w=majority'
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
-mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false})
+.then(() => console.log("Database Connected Successfully"))
+.catch(err => console.log(err));         
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
